@@ -13,22 +13,23 @@ class M_pendaftaran extends CI_Model {
         return $hasil;
     }
 
-    public function get_data_parameter($id,$param){
-        $hasil=$this->db->from('pendaftaran')->where($param)->get();
+    public function get_a_data(){
+        $id = $this->input->post('id',true);
+        $hasil=$this->db->from('pendaftaran')->where(array('dft_id'=>$id))->get()->row();
         return $hasil;
     }
 
-    public function save_data($data){
-        return $this->db->insert('pendaftaran', $data);
+    public function save_data(){
+        $data=array(
+            'dft_created_by'=>"Admin",
+        );
+        $this->db->insert('pendaftaran', $data);
+
+        $insert_id = $this->db->insert_id();
+
+        return  $insert_id;
     }
 
-    public function edit_data($data,$param){
-        return $this->db->update('pendaftaran', $data, $param);
-    }
-
-    public function delete_data($param){
-        return $this->db->delete('pendaftaran', $param);
-    }
 
     
 }

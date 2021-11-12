@@ -1,93 +1,92 @@
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0-rc
+
+   	</section>
+		</div>
+      <footer class="main-footer">
+        
+        <div class="footer-right">
+        © UPT TIK 2020
+        </div>
+      </footer>
     </div>
-  </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<?=base_url()?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="<?=base_url()?>assets/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="<?=base_url()?>assets/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="<?=base_url()?>assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?=base_url()?>assets/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="<?=base_url()?>assets/plugins/moment/moment.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="<?=base_url()?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="<?=base_url()?>assets/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="<?=base_url()?>assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?=base_url()?>assets/dist/js/adminlte.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="<?=base_url()?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/jszip/jszip.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="<?=base_url()?>assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="<?=base_url()?>assets/plugins/toastr/toastr.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<!-- <script src="<?=base_url()?>assets/dist/js/demo.js"></script> -->
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<!-- <script src="<?=base_url()?>assets/dist/js/pages/dashboard.js"></script> -->
+  <!-- General JS Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="<?=base_url()?>assets/js/stisla.js"></script>
+  <!-- <script src="<?=base_url()?>assets/js/page/forms-advanced-forms.js"></script> -->
+
+
+  <!-- Template JS File -->
+  <script src="<?=base_url()?>assets/js/scripts.js"></script>
+  <script src="<?=base_url()?>assets/js/custom.js"></script>
+  <script src="<?=base_url()?>assets/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  
+  <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet">
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.10.15/sorting/datetime-moment.js"></script>
+  <script src="<?=base_url()?>assets/js/select2.full.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $.datetimepicker.setLocale('id');
+  
+  $('.datetimepicker').datetimepicker({
+    format:'Y/m/d H:i:s',
+  lang:'id'
+  });
+
+  $('.datepicker').datetimepicker({
+    format:'d-m-Y',
+    timepicker:false,
+    lang:'id'
+  });
+   $('.dataTableExport').DataTable({
+        // 'ordering' : false,
+        // responsive: true,
+        
+         dom: 'Blfrtip',
+        "aLengthMenu": [50, 75, 100, 150, 200],
+
+        buttons: [
+            'copy', 'csv','excel', 'pdf', 'print'
+        ],
+    });
+
+    $('.dataTableExport_x').DataTable({
+        'ordering' : false,
+         responsive: true,
+        
+         dom: 'Blfrtip',
+        "aLengthMenu": [200, 500, 1000],
+
+        buttons: [
+           'excel', 'pdf', 'print'
+        ],
+    });
+
+    // $('.select2modal').select2({
+    //     // width: '100%'                        
+    // })
+  });
+  
+  
+  </script>
+  
 </body>
 </html>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
-
-
 <?php
-    if(!empty($script)){
-      $this->load->view($script);
-    }
-  ?>
+if (!empty($script))$this->load->view($script);
+?>
