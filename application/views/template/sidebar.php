@@ -28,13 +28,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="#" class="nav-link <?=$link=='beranda'||$link==''?'active':''?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item <?=$link=='ref_agama'||$link=='ref_dok_identitas'||$link=='ref_pekerjaan'||$link=='anggota'||$link=='rekening'?'menu-open':''?>">
+            <a href="#" class="nav-link <?=$link=='ref_agama'||$link=='ref_dok_identitas'||$link=='ref_pekerjaan'||$link=='anggota'||$link=='rekening'?'active':''?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Master
@@ -43,21 +43,33 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="<?=base_url()?>admin/ref_agama" class="nav-link <?=$link=='ref_agama'?'active':''?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Setting A</p>
+                  <p>Agama</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Setting B</p>
+                  <p>Dokumen Identitas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Setting C</p>
+                  <p>Pekerjaan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Anggota</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rekening</p>
                 </a>
               </li>
             </ul>
@@ -74,19 +86,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link ">
+                <a href="#" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Setting A</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Setting B</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Setting C</p>
                 </a>
