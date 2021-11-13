@@ -13,8 +13,8 @@ class M_bayar_pembiayaan extends CI_Model {
         return $hasil;
     }
 
-    public function get_data_parameter($id,$param){
-        $hasil=$this->db->from('bayar_pembiayaan')->where($param)->get();
+    public function get_data_parameter($id){
+        $hasil=$this->db->from('bayar_pembiayaan')->where(array('byr_tbi_id'=>$id))->get()->result();
         return $hasil;
     }
 

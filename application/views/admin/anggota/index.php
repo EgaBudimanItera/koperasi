@@ -5,36 +5,36 @@
   
 </div>
 <div class="table-responsive">
-<table class="table table-sm dataTableExport table-bordered table-striped" style="width:100%">
-          <thead>
-              <tr>
-                  <th>No</th>
-                  <th>Nomor Anggota</th>
-                  <th>Nama Anggota</th>
-                  <th>Jenis Kelamin</th>
-                  <th>No Hp</th>
-                  <th>Pekerjaan</th>
-                  <th>Aksi</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php foreach($list as $key => $val) { ?>
-              <tr>
-                  <td><?=$key+1?></td>
-                  <td><?=$val->ang_nomor?></td>
-                  <td><?=$val->ang_nama?></td>
-                  <td><?=$val->ang_jk?></td>
-                  <td><?=$val->ang_no_hp?></td>
-                  <td><?=$val->krj_nama?></td>
-                  <td>
-                    <a id="<?=$val->ang_id?>"  href="<?=base_url()?>admin/anggota/detail/<?=md5($val->ang_id)?>" class="btn btn-sm btn-warning"> <i class="fas fa-eye"></i> Detail </a>
-                   
+  <table class="table table-sm dataTableExport table-bordered table-striped" style="width:100%">
+      <thead>
+          <tr>
+              <th>No</th>
+              <th>Nomor Anggota</th>
+              <th>Nama Anggota</th>
+              <th>Jenis Kelamin</th>
+              <th>No Hp</th>
+              <th>Pekerjaan</th>
+              <th>Aksi</th>
+          </tr>
+      </thead>
+      <tbody>
+      <?php foreach($list as $key => $val) { ?>
+          <tr>
+              <td><?=$key+1?></td>
+              <td><?=$val->ang_nomor?></td>
+              <td><?=$val->ang_nama?></td>
+              <td><?=$val->ang_jk?></td>
+              <td><?=$val->ang_no_hp?></td>
+              <td><?=$val->krj_nama?></td>
+              <td>
+                <a id="<?=$val->ang_id?>"  href="<?=base_url()?>admin/anggota/detail/<?=md5($val->ang_id)?>" class="btn btn-sm btn-warning"> <i class="fas fa-eye"></i> Detail </a>
+                
 
-                  </td>
-              </tr>
-          <?php }?>
-          </tbody>
-      </table>
+              </td>
+          </tr>
+      <?php }?>
+      </tbody>
+  </table>
 </div>
 <!-- Modal Tambah anggota -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="tambah_anggota" data-backdrop="false">

@@ -13,8 +13,8 @@ class M_pembiayaan extends CI_Model {
         return $hasil;
     }
 
-    public function get_data_parameter($id,$param){
-        $hasil=$this->db->from('pembiayaan')->where($param)->get();
+    public function get_data_parameter($id){
+        $hasil=$this->db->from('pembiayaan')->join('ref_setting_pembiayaan','tbi_sbi_id=sbi_id')->where(array('md5(tbi_ang_id)'=>$id))->get()->result();
         return $hasil;
     }
 

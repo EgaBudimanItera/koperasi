@@ -13,8 +13,8 @@ class M_simpan extends CI_Model {
         return $hasil;
     }
 
-    public function get_data_parameter($id,$param){
-        $hasil=$this->db->from('simpan')->where($param)->get();
+    public function get_data_parameter($id){
+        $hasil=$this->db->from('simpan')->where(array('md5(tsi_ang_id)'=>$id))->get()->result();
         return $hasil;
     }
 

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Anggota extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('M_anggota','M_rekening','M_pendaftaran','M_ref_agama','M_ref_pekerjaan','M_ref_dok_identitas','M_simpan'));
+		$this->load->model(array('M_anggota','M_rekening','M_pendaftaran','M_ref_agama','M_ref_pekerjaan','M_ref_dok_identitas','M_simpan','M_pembiayaan','M_bayar_pembiayaan'));
         
 	}
 
@@ -26,13 +26,22 @@ class Anggota extends CI_Controller {
 
 	}
 	public function detail($id){
+		$output=array();
+		$pembiayaan=$this->M_pembiayaan->get_data_parameter($id);
+		foreach($pembiayaan as $p){
+			$byr_tbi_id=$p->tbi_id;
+			$bayar_pembiayaan=$this->M_bayar_pembiayaan->get_data_parameter($byr_tbi_id);
+			$p->bayar=$bayar_pembiayaan;
+			$output[]=$p;
+		}
 		$data = array(
 			'page' => 'admin/anggota/detail',
 			'link' => 'anggota',
 			'link2'=>'',
             'script'=>'script/anggota/anggota_script',
 			'list'=>$this->M_anggota->get_detail($id),
-            
+            'list_simpanan'=>$this->M_simpan->get_data_parameter($id),
+			'list_pembiayaan'=>$output,
             'ref_agama'=>$this->M_ref_agama->get_all_data(),
             'ref_pekerjaan'=>$this->M_ref_pekerjaan->get_all_data(),
             'ref_dok_identitas'=>$this->M_ref_dok_identitas->get_all_data(),
