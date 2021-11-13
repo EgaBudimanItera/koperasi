@@ -12,6 +12,7 @@ class Ref_pekerjaan extends CI_Controller {
 		$data = array(
 			'page' => 'admin/ref_pekerjaan/index',
 			'link' => 'ref_pekerjaan',
+			'link2'=>'master',
             'script'=>'script/ref_pekerjaan/ref_pekerjaan_script',
 			'list'=>$this->M_ref_pekerjaan->get_all_data(),
 		);

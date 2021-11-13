@@ -12,6 +12,7 @@ class Ref_dok_identitas extends CI_Controller {
 		$data = array(
 			'page' => 'admin/ref_dok_identitas/index',
 			'link' => 'ref_dok_identitas',
+			'link2'=>'master',
             'script'=>'script/ref_dok_identitas/ref_dok_identitas_script',
 			'list'=>$this->M_ref_dok_identitas->get_all_data(),
 		);

@@ -11,7 +11,7 @@ class Beranda extends CI_Controller {
 		$data = array(
 			'page' => 'beranda',
 			'link' => 'beranda',
-            
+            'link2'=>'',
 		);
 	
 		$this->load->view('template/wrapper', $data);

@@ -12,6 +12,7 @@ class Ref_setting_pembiayaan extends CI_Controller {
 		$data = array(
 			'page' => 'admin/ref_setting_pembiayaan/index',
 			'link' => 'ref_setting_pembiayaan',
+			'link2'=>'master',
             'script'=>'script/ref_setting_pembiayaan/ref_setting_pembiayaan_script',
 			'list'=>$this->M_ref_setting_pembiayaan->get_all_data(),
 		);

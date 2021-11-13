@@ -12,6 +12,7 @@ class Anggota extends CI_Controller {
 		$data = array(
 			'page' => 'admin/anggota/index',
 			'link' => 'anggota',
+			'link2'=>'',
             'script'=>'script/anggota/anggota_script',
 			'list'=>$this->M_anggota->get_all_data(),
             'nomor_anggota'=>$this->M_anggota->nomor_anggota(),
@@ -28,6 +29,7 @@ class Anggota extends CI_Controller {
 		$data = array(
 			'page' => 'admin/anggota/detail',
 			'link' => 'anggota',
+			'link2'=>'',
             'script'=>'script/anggota/anggota_script',
 			'list'=>$this->M_anggota->get_detail($id),
             
@@ -53,12 +55,25 @@ class Anggota extends CI_Controller {
 		$tsi_simpanan_pokok=str_replace(',', '', $this->input->post('tsi_simpanan_pokok',true));
 		$tsi_simpanan_wajib=str_replace(',', '', $this->input->post('tsi_simpanan_wajib',true));
 		$tsi_simpanan_sukarela=str_replace(',', '', $this->input->post('tsi_simpanan_sukarela',true));
+		$birthDate = date("m/d/Y", strtotime($this->input->post('ang_tanggal_lahir',true)));
+		// $birthDate = "12/17/1983";
+		//explode the date to get month, day and year
+		$birthDate = explode("/", $birthDate);
+		//get age from date or birthdate
+		$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+		  ? ((date("Y") - $birthDate[2]) - 1)
+		  : (date("Y") - $birthDate[2]));
+		if($age<17){
+			echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a>Gagal disimpan! Usia Kurang dari 17</div>';
+			echo'<script>location.reload();</script>';
+			exit();
+		}
 		// $tsi_simpanan_pokok=str_replace('.', '', $this->input->post('tsi_simpanan_pokok',true));
 		$data=array(
             'ang_nomor'=>$this->input->post('ang_nomor',true),
             'ang_nama'=>$this->input->post('ang_nama',true),
             'ang_tempat_lahir'=>$this->input->post('ang_tempat_lahir',true),
-            'ang_tanggal_lahir'=>date("Y-m-d", strtotime($this->input->post('ang_tanggal_lahir',true))),
+            'ang_tanggal_lahir'=>$birthDate,
             'ang_jk'=>$this->input->post('ang_jk',true),
             'ang_agm_id'=>$this->input->post('ang_agm_id',true),
             'ang_krj_id'=>$this->input->post('ang_krj_id',true),

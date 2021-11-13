@@ -12,6 +12,7 @@ class Ref_agama extends CI_Controller {
 		$data = array(
 			'page' => 'admin/ref_agama/index',
 			'link' => 'ref_agama',
+			'link2'=>'master',
             'script'=>'script/ref_agama/ref_agama_script',
 			'list'=>$this->M_ref_agama->get_all_data(),
 		);

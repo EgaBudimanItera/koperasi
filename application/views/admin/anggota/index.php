@@ -61,6 +61,10 @@
                       <input type="text" id="ang_nomor" value="<?=$nomor_anggota?>" readonly name="ang_nomor" class="form-control">
                     </div>
                     <div class="form-group">
+                      <label>Tanggal Daftar</label>
+                      <input type="text" id="dft_tanggal_daftar" value="<?=date('d-m-Y')?>" name="dft_tanggal_daftar" class="form-control datepicker">
+                    </div>
+                    <div class="form-group">
                       <label>Nama Anggota</label>
                       <input type="text" id="ang_nama" name="ang_nama" class="form-control">
                     </div>
