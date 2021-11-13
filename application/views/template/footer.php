@@ -19,7 +19,7 @@
   <script src="<?=base_url()?>assets/js/stisla.js"></script>
   <!-- <script src="<?=base_url()?>assets/js/page/forms-advanced-forms.js"></script> -->
 
-
+  <script src="<?=base_url()?>assets/jquery.number.min.js"></script>
   <!-- Template JS File -->
   <script src="<?=base_url()?>assets/js/scripts.js"></script>
   <script src="<?=base_url()?>assets/js/custom.js"></script>

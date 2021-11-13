@@ -18,6 +18,11 @@ class M_simpan extends CI_Model {
         return $hasil;
     }
 
+    public function nomor_simpan(){
+        $randnum = rand(1111111111,9999999999);
+        return $randnum;
+    } 
+
     public function save_data($data){
         return $this->db->insert('simpan', $data);
     }

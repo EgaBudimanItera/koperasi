@@ -24,12 +24,11 @@ class M_rekening extends CI_Model {
         return $randnum;
     } 
 
-    public function save_data($ang_id){
-        $data=array(
-            'rek_ang_id'=>$ang_id,
-            'rek_no_rekening'=>$this->input->post('rek_no_rekening',true),
-            'ang_created_by'=>"admin",
-        );
-        return $this->db->insert('ref_agama', $data);
+    public function save_data($data){
+        
+        $this->db->insert('rekening', $data);
+        $insert_id = $this->db->insert_id();
+
+        return  $insert_id;
     }
 }

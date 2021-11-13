@@ -27,7 +27,7 @@
                   <td><?=$val->ang_no_hp?></td>
                   <td><?=$val->krj_nama?></td>
                   <td>
-                    <a id="<?=$val->ang_id?>"  href="#" class="btn btn-sm btn-warning detail_anggota"> <i class="fas fa-eye"></i> Detail </a>
+                    <a id="<?=$val->ang_id?>"  href="<?=base_url()?>admin/anggota/detail/<?=md5($val->ang_id)?>" class="btn btn-sm btn-warning"> <i class="fas fa-eye"></i> Detail </a>
                    
 
                   </td>
@@ -47,7 +47,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="form_anggota" name="form_anggota" method="POST">
+        <form id="form_anggota" name="form_anggota" method="POST" onSubmit="return confirm('yakin Untuk menyimpan?');">
             
             <div class="row">
               <div class="col-12 col-md-6 col-lg-6">
@@ -85,7 +85,7 @@
                       <select name="ang_agm_id" id="ang_agm_id" class="form-control">
                           <option value="">--Pilih--</option>
                           <?php
-                            foreach($ref_pekerjaan as $a){
+                            foreach($ref_agama as $a){
                           ?>
                           <option value="<?=$a->agm_id?>"><?=$a->agm_nama?></option>
                           <?php
@@ -178,15 +178,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Pokok</label>
-                                <input type="text" name="ang_no_hp" id="ang_no_hp" class="form-control">
+                                <input type="text" name="tsi_simpanan_pokok" id="tsi_simpanan_pokok" class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Wajib</label>
-                                <input type="text" name="ang_no_hp" id="ang_no_hp" class="form-control">
+                                <input type="text" name="tsi_simpanan_wajib" id="tsi_simpanan_wajib" class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Sukarela</label>
-                                <input type="text" name="ang_no_hp" id="ang_no_hp" class="form-control">
+                                <input type="text" name="tsi_simpanan_sukarela" id="tsi_simpanan_sukarela" class="form-control angka">
                             </div>
                         </div>
                     </div>
