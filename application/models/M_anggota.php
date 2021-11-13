@@ -51,6 +51,7 @@ class M_anggota extends CI_Model {
             ->join('ref_agama ','ang_agm_id=agm_id')
             ->join('ref_pekerjaan','ang_krj_id=krj_id')
             ->join('ref_dok_identitas','ang_idn_id=idn_id')
+            ->join('rekening','rek_ang_id=ang_id')
             ->where(array('ang_is_deleted'=>'1','md5(ang_id)'=>$id));
         $hasil = $this->db->get()->row();
         return $hasil;
