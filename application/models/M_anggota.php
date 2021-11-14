@@ -41,8 +41,17 @@ class M_anggota extends CI_Model {
 
     public function get_a_data(){
         $id = $this->input->post('id',true);
-        
         $hasil=$this->db->from('anggota')->where(array('ang_id'=>$id))->get()->row();
+        return $hasil;
+    }
+
+    public function get_a_data_comp(){
+        $id = $this->input->post('id',true);
+        $hasil=$this->db->from('anggota')
+                        ->join('rekening','rek_ang_id=ang_id')
+                        ->join('ref_dok_identitas','ang_idn_id=idn_id')
+                        
+                        ->where(array('ang_id'=>$id))->get()->row();
         return $hasil;
     }
 

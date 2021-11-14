@@ -57,6 +57,10 @@ class Anggota extends CI_Controller {
 		$data=$this->M_anggota->get_a_data();
 		echo json_encode($data);
 	}
+	public function get_anggota_param_comp(){
+		$data=$this->M_anggota->get_a_data_comp();
+		echo json_encode($data);
+	}
 	function save(){
         
 		$dft_id=$this->M_pendaftaran->save_data();

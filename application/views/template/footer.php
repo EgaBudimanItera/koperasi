@@ -76,10 +76,17 @@
            'excel', 'pdf', 'print'
         ],
     });
-
-    // $('.select2modal').select2({
-    //     // width: '100%'                        
-    // })
+    function formatDesign(item) {
+        var selectionText = item.text.split(".");
+        // var $returnString = selectionText[0] + "</br>" + selectionText[1];
+        var $returnString = $('<span>'+selectionText[0] + '</br>' + selectionText[1] +'</br>'+selectionText[2]+ '</span>');
+        
+        return $returnString;
+    };
+    $('.select2modal').select2({
+        width: '100%',
+                   
+    });
   });
   
   

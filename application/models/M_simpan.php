@@ -9,7 +9,10 @@ class M_simpan extends CI_Model {
 	}
 
     public function get_all_data(){
-        $hasil=$this->db->from('simpan')->where(array('byr_is_deleted'=>'1'))->get()->result();
+        $hasil=$this->db->from('simpan')
+                        ->join('anggota','tsi_ang_id=ang_id')
+                        ->join('rekening','tsi_rek_id=rek_id')
+                        ->where(array('tsi_is_deleted'=>'1'))->get()->result();
         return $hasil;
     }
 
