@@ -50,25 +50,25 @@
         <form id="form_setting_pembiayaan" name="form_setting_pembiayaan" method="POST">
             <div class="form-group">
                 <label for="exampleInputPassword1">Kode Pembiayaan</label>
-                <input type="text" class="form-control" id="sbi_kode" name="sbi_kode">
+                <input type="text" class="form-control" require id="sbi_kode" name="sbi_kode">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Nama Pembiayaan</label>
-                <input type="text" class="form-control" id="sbi_nama" name="sbi_nama">
+                <input type="text" class="form-control" require id="sbi_nama" name="sbi_nama">
             </div>
 
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Max Plafon (Rupiah)</label>
-                <input type="text" class="form-control" id="sbi_max_plafon" name="sbi_max_plafon">
+                <input type="text" class="form-control" id="sbi_max_plafon" require name="sbi_max_plafon">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Max Waktu Pinjam (Bulan) </label>
-                <input type="text" class="form-control" id="sbi_max_waktu_pinjam" name="sbi_max_waktu_pinjam">
+                <input type="text" class="form-control" id="sbi_max_waktu_pinjam" require name="sbi_max_waktu_pinjam">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Bunga (%) </label>
-                <input type="text" class="form-control" id="sbi_bunga" name="sbi_bunga">
+                <input type="text" class="form-control" id="sbi_bunga" require name="sbi_bunga">
             </div>
       </div>
       <div class="modal-footer">

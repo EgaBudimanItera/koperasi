@@ -44,7 +44,7 @@
       <form id="form_agama" name="form_agama" method="POST">
       <div class="form-group">
         <label for="exampleInputPassword1">Nama Agama</label>
-        <input type="text" class="form-control" id="agm_nama" name="agm_nama">
+        <input type="text" class="form-control" id="agm_nama" require name="agm_nama">
       </div>
       
       </div>

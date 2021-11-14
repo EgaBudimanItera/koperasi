@@ -44,7 +44,7 @@
       <form id="form_ref_dok_identitas" name="form_ref_dok_identitas" method="POST">
       <div class="form-group">
         <label for="exampleInputPassword1">Nama Dokumen Identitas</label>
-        <input type="text" class="form-control" id="idn_nama" name="idn_nama">
+        <input type="text" class="form-control" require id="idn_nama" name="idn_nama">
       </div>
       
       </div>

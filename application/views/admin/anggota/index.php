@@ -66,19 +66,19 @@
                     </div>
                     <div class="form-group">
                       <label>Nama Anggota</label>
-                      <input type="text" id="ang_nama" name="ang_nama" class="form-control">
+                      <input type="text" require id="ang_nama" name="ang_nama" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tempat Lahir</label>
-                      <input type="text" id="ang_tempat_lahir" name="ang_tempat_lahir" class="form-control">
+                      <input type="text" require id="ang_tempat_lahir" name="ang_tempat_lahir" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tanggal Lahir</label>
-                      <input type="text" id="ang_tanggal_lahir" name="ang_tanggal_lahir" class="form-control datepicker">
+                      <input type="text" require id="ang_tanggal_lahir" name="ang_tanggal_lahir" class="form-control datepicker">
                     </div>
                     <div class="form-group">
                       <label>Jenis Kelamin</label>
-                      <select name="ang_jk" class="form-control" id="ang_jk" class="form-control">
+                      <select name="ang_jk" class="form-control" id="ang_jk" require class="form-control">
                           <option value="">--Pilih--</option>
                           <option value="Pria">Pria</option>
                           <option value="Wanita">Wanita</option>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-group">
                       <label>Agama</label>
-                      <select name="ang_agm_id" id="ang_agm_id" class="form-control">
+                      <select name="ang_agm_id" id="ang_agm_id" require class="form-control">
                           <option value="">--Pilih--</option>
                           <?php
                             foreach($ref_agama as $a){
@@ -99,7 +99,7 @@
                     </div>
                     <div class="form-group">
                       <label>Pekerjaan</label>
-                      <select name="ang_krj_id" id="ang_krj_id" class="form-control">
+                      <select name="ang_krj_id" id="ang_krj_id" require class="form-control">
                           <option value="">--Pilih--</option>
                           <?php
                             foreach($ref_pekerjaan as $a){
@@ -112,15 +112,15 @@
                     </div>
                     <div class="form-group">
                       <label>Nama Ayah</label>
-                      <input type="text" id="ang_nama_ayah" name="ang_nama_ayah" class="form-control">
+                      <input type="text" id="ang_nama_ayah" require name="ang_nama_ayah" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Nama Ibu</label>
-                      <input type="text" id="ang_nama_ibu" name="ang_nama_ibu" class="form-control">
+                      <input type="text" id="ang_nama_ibu" require name="ang_nama_ibu" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Alamat</label>
-                      <textarea name="ang_alamat" id="ang_alamat" cols="30" rows="10" style="height:70%" class="form-control"></textarea>
+                      <textarea name="ang_alamat" id="ang_alamat" require cols="30" rows="10" style="height:70%" class="form-control"></textarea>
                     </div>
                   </div>
                 </div>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="form-group">
                       <label>Jenis Dokumen Identitas</label>
-                      <select name="ang_idn_id" id="ang_idn_id" class="form-control">
+                      <select name="ang_idn_id" id="ang_idn_id" require class="form-control">
                           <option value="">--Pilih--</option>
                           <?php
                             foreach($ref_dok_identitas as $a){
@@ -151,19 +151,19 @@
                     </div>
                     <div class="form-group">
                       <label>Nomor Identitas</label>
-                      <input type="text" id="ang_no_identitas" name="ang_no_identitas" class="form-control">
+                      <input type="text" id="ang_no_identitas" require name="ang_no_identitas" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Nama Ahli Waris</label>
-                      <input type="text" id="ang_nama_ahli_waris" name="ang_nama_ahli_waris" class="form-control">
+                      <input type="text" id="ang_nama_ahli_waris" require name="ang_nama_ahli_waris" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Alamat Ahli Waris</label>
-                      <textarea name="ang_alamat_ahli_waris" id="ang_alamat_ahli_waris" cols="30" rows="10" style="height:70%" class="form-control"></textarea>
+                      <textarea name="ang_alamat_ahli_waris" require id="ang_alamat_ahli_waris" cols="30" rows="10" style="height:70%" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                       <label>Hubungan Keluarga</label>
-                      <input type="text" id="ang_hub_keluarga" name="ang_hub_keluarga" class="form-control">
+                      <input type="text" id="ang_hub_keluarga" require name="ang_hub_keluarga" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -182,15 +182,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Pokok</label>
-                                <input type="text" name="tsi_simpanan_pokok" id="tsi_simpanan_pokok" class="form-control angka">
+                                <input type="text" require name="tsi_simpanan_pokok" id="tsi_simpanan_pokok" value='0'class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Wajib</label>
-                                <input type="text" name="tsi_simpanan_wajib" id="tsi_simpanan_wajib" class="form-control angka">
+                                <input type="text" require name="tsi_simpanan_wajib" id="tsi_simpanan_wajib" value='0'class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Sukarela</label>
-                                <input type="text" name="tsi_simpanan_sukarela" id="tsi_simpanan_sukarela" class="form-control angka">
+                                <input type="text" require name="tsi_simpanan_sukarela" id="tsi_simpanan_sukarela" value='0'class="form-control angka">
                             </div>
                         </div>
                     </div>

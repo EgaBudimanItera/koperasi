@@ -44,7 +44,7 @@
       <form id="form_pekerjaan" name="form_pekerjaan" method="POST">
       <div class="form-group">
         <label for="exampleInputPassword1">Nama pekerjaan</label>
-        <input type="text" class="form-control" id="krj_nama" name="krj_nama">
+        <input type="text" class="form-control" require id="krj_nama" name="krj_nama">
       </div>
       
       </div>
