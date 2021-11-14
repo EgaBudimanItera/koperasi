@@ -59,8 +59,8 @@ class Anggota extends CI_Controller {
 	}
 	function save(){
         
-		// $dft_id=$this->M_pendaftaran->save_data();
-		$dft_id='1';
+		$dft_id=$this->M_pendaftaran->save_data();
+		// $dft_id='1';
 		$tsi_simpanan_pokok=str_replace(',', '', $this->input->post('tsi_simpanan_pokok',true));
 		$tsi_simpanan_wajib=str_replace(',', '', $this->input->post('tsi_simpanan_wajib',true));
 		$tsi_simpanan_sukarela=str_replace(',', '', $this->input->post('tsi_simpanan_sukarela',true));
@@ -82,7 +82,7 @@ class Anggota extends CI_Controller {
             'ang_nomor'=>$this->input->post('ang_nomor',true),
             'ang_nama'=>$this->input->post('ang_nama',true),
             'ang_tempat_lahir'=>$this->input->post('ang_tempat_lahir',true),
-            'ang_tanggal_lahir'=>$birthDate,
+            'ang_tanggal_lahir'=>date("Y-m-d", strtotime($this->input->post('ang_tanggal_lahir',true))),
             'ang_jk'=>$this->input->post('ang_jk',true),
             'ang_agm_id'=>$this->input->post('ang_agm_id',true),
             'ang_krj_id'=>$this->input->post('ang_krj_id',true),

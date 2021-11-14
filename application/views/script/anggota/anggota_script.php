@@ -28,6 +28,17 @@
                     $('#notif_sukses').html(msg);
                 }
             });
+        }else if(action =='ubah'){
+            $.ajax({
+                url : '<?=base_url()?>admin/anggota/update',
+                type : 'POST',
+                data : data,
+                processData: false, 
+                contentType: false,
+                success : function(msg){
+                    $('#notif_sukses').html(msg);
+                }
+            });
         }
 
     });

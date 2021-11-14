@@ -147,10 +147,10 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <input type="submit" class="btn btn-primary" value="Ubah">
+                        <div id="notif_sukses"></div>
                         <input type="text" style="display: none" value="$list->ang_id" name="ang_id" id="ang_id"/>
-                        <input type="text" style="display: none" name="action" id="action"/>
+                        <input type="text" style="display: none" name="action" value="ubah" id="action"/>
+                        <input type="submit" class="btn btn-primary" value="Ubah">
                     </form>
                 </div>
             </div>
