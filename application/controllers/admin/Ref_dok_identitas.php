@@ -6,6 +6,10 @@ class Ref_dok_identitas extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_ref_dok_identitas');
         
+		if($this->session->userdata('usr_ref_dok_identitas')==0){
+            echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
+            echo'<script>window.location.href="'.base_url().'";</script>';
+        }
 	}
 
 	public function index(){

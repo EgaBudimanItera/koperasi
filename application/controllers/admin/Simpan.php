@@ -6,6 +6,10 @@ class Simpan extends CI_Controller {
 		parent::__construct();
 		$this->load->model(array('M_simpan','M_anggota'));
         
+		if($this->session->userdata('usr_simpan')==0){
+            echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
+            echo'<script>window.location.href="'.base_url().'";</script>';
+        }
 	}
 
 	public function index(){

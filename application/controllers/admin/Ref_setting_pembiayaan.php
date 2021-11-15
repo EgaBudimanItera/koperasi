@@ -6,6 +6,10 @@ class Ref_setting_pembiayaan extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_ref_setting_pembiayaan');
         
+		if($this->session->userdata('usr_setting_pembiayaan')==0){
+            echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
+            echo'<script>window.location.href="'.base_url().'";</script>';
+        }
 	}
 
 	public function index(){

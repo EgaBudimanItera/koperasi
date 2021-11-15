@@ -4,7 +4,7 @@
       <footer class="main-footer">
         
         <div class="footer-right">
-        © UPT TIK 2020
+        @ Koperasi
         </div>
       </footer>
     </div>

@@ -6,6 +6,10 @@ class Anggota extends CI_Controller {
 		parent::__construct();
 		$this->load->model(array('M_anggota','M_rekening','M_pendaftaran','M_ref_agama','M_ref_pekerjaan','M_ref_dok_identitas','M_simpan','M_pembiayaan','M_bayar_pembiayaan'));
         
+		if($this->session->userdata('usr_anggota')==0){
+            echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
+            echo'<script>window.location.href="'.base_url().'";</script>';
+        }
 	}
 
 	public function index(){
