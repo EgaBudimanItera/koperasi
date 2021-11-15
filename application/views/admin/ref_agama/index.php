@@ -41,10 +41,10 @@
         </button>
       </div>
       <div class="modal-body">
-      <form id="form_agama" name="form_agama" method="POST">
+      <form id="form_agama" name="form_agama" method="POST" autocomplete="off">
       <div class="form-group">
         <label for="exampleInputPassword1">Nama Agama</label>
-        <input type="text" class="form-control" id="agm_nama" require name="agm_nama">
+        <input type="text" class="form-control" id="agm_nama" autocomplete="off" require name="agm_nama">
       </div>
       
       </div>

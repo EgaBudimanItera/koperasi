@@ -27,5 +27,9 @@ class Auth extends CI_Controller {
             echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Password salah !</div>';
         }
     }
-	
+	public function signout(){
+        echo 'Please wait...';
+        $this->session->sess_destroy();
+        echo'<script>window.location.href="'.base_url().'";</script>';
+    }
 }

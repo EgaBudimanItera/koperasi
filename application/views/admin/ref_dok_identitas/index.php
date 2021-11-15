@@ -41,10 +41,10 @@
         </button>
       </div>
       <div class="modal-body">
-      <form id="form_ref_dok_identitas" name="form_ref_dok_identitas" method="POST">
+      <form id="form_ref_dok_identitas" name="form_ref_dok_identitas" method="POST" autocomplete="off">
       <div class="form-group">
         <label for="exampleInputPassword1">Nama Dokumen Identitas</label>
-        <input type="text" class="form-control" require id="idn_nama" name="idn_nama">
+        <input type="text" class="form-control" require autocomplete="off" id="idn_nama" name="idn_nama">
       </div>
       
       </div>

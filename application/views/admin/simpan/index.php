@@ -49,7 +49,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="form_simpan" name="form_simpan" method="POST" onSubmit="return confirm('yakin Untuk menyimpan?');">
+        <form id="form_simpan" autocomplete="off" name="form_simpan" method="POST" onSubmit="return confirm('yakin Untuk menyimpan?');">
             
             <div class="row">
               <div class="col-12 col-md-6 col-lg-6">
@@ -58,16 +58,16 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label>Nomor simpan</label>
-                      <input type="text" id="tsi_no_simpan" value="<?=$nomor_simpan?>" readonly name="tsi_no_simpan" class="form-control">
+                      <input type="text"  id="tsi_no_simpan" value="<?=$nomor_simpan?>" readonly name="tsi_no_simpan" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tanggal Simpan</label>
-                      <input type="text" id="tsi_tanggal_simpan" value="<?=date('d-m-Y')?>" name="tsi_tanggal_simpan" class="form-control datepicker">
+                      <input type="text" autocomplete="off" readonly id="tsi_tanggal_simpan" value="<?=date('d-m-Y')?>" name="tsi_tanggal_simpan" class="form-control datepicker">
                     </div>
                     
                     <div class="form-group">
                       <label>Nama Anggota</label>
-                      <select name="tsi_ang_id" id="tsi_ang_id" class="form-control select2modal">
+                      <select name="tsi_ang_id" id="tsi_ang_id" autocomplete="off" readonly class="form-control select2modal">
                           <option value="">--Pilih--</option>
                           <?php
                             foreach($anggota as $l=>$val){
@@ -78,21 +78,18 @@
                           ?>
                       </select>
                     </div>
-                    <div class="form-group">
-                        <label>Nomor Rekening</label>
-                        <input type="text" readonly name="rek_no_rekening" id="rek_no_rekening" class="form-control">
-                    </div>
+                    
                     <div class="form-group">
                       <label>Tempat Lahir</label>
-                      <input type="text" require id="ang_tempat_lahir" name="ang_tempat_lahir" class="form-control">
+                      <input type="text" require id="ang_tempat_lahir" autocomplete="off" name="ang_tempat_lahir" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tanggal Lahir</label>
-                      <input type="text" require id="ang_tanggal_lahir" name="ang_tanggal_lahir" class="form-control">
+                      <input type="text" require id="ang_tanggal_lahir" autocomplete="off" readonly name="ang_tanggal_lahir" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Jenis Kelamin</label>
-                      <input type="text" require id="ang_jk" name="ang_jk" class="form-control">
+                      <input type="text" require id="ang_jk" name="ang_jk" autocomplete="off" readonly class="form-control">
                     </div>
                     
                     
@@ -105,27 +102,27 @@
                   <div class="card-body">
                   <div class="form-group">
                       <label>No Hp</label>
-                      <input type="text" name="ang_no_hp" id="ang_no_hp" class="form-control">
+                      <input type="text" name="ang_no_hp" id="ang_no_hp" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Jenis Dokumen Identitas</label>
-                      <input type="text" name="idn_nama" id="idn_nama" class="form-control">
+                      <input type="text" name="idn_nama" id="idn_nama" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Nomor Identitas</label>
-                      <input type="text" id="ang_no_identitas" require name="ang_no_identitas" class="form-control">
+                      <input type="text" id="ang_no_identitas" autocomplete="off" require name="ang_no_identitas" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Simpanan Pokok</label>
-                        <input type="text" require name="tsi_simpanan_pokok" id="tsi_simpanan_pokok" value='0'class="form-control angka">
+                        <input type="text" require name="tsi_simpanan_pokok" autocomplete="off" id="tsi_simpanan_pokok" value='0'class="form-control angka">
                     </div>
                     <div class="form-group">
                         <label>Simpanan Wajib</label>
-                        <input type="text" require name="tsi_simpanan_wajib" id="tsi_simpanan_wajib" value='0'class="form-control angka">
+                        <input type="text" require name="tsi_simpanan_wajib" autocomplete="off" id="tsi_simpanan_wajib" value='0'class="form-control angka">
                     </div>
                     <div class="form-group">
                         <label>Simpanan Sukarela</label>
-                        <input type="text" require name="tsi_simpanan_sukarela" id="tsi_simpanan_sukarela" value='0'class="form-control angka">
+                        <input type="text" require name="tsi_simpanan_sukarela" autocomplete="off" id="tsi_simpanan_sukarela" value='0'class="form-control angka">
                     </div>
                   </div>
                 </div>
