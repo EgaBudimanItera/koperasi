@@ -79,7 +79,7 @@ class M_simpan extends CI_Model {
         $tsi_id=$this->input->post('id',true);
         $data=array(
             'tsi_updated_by'=>$nama_pembuat,
-            'tsi_updated_at'=>date('Y-m-d H:i:s'),
+            // 'tsi_updated_at'=>date('Y-m-d H:i:s'),
             'tsi_is_deleted'=>'0'
         );
         return $this->db->update('simpan', $data, array('tsi_id'=>$tsi_id));
