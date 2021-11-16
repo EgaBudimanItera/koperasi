@@ -4,6 +4,7 @@
   <a data-target="#tambah_anggota" href="#" data-toggle="modal" id="tambah_mod_anggota" style="text-decoration:none;" class="btn btn-primary btn-xs ml-auto"><i class="fa fa-plus-square" aria-hidden="true"></i> Pendaftaran</a>
   
 </div>
+
 <div class="table-responsive">
   <table class="table table-sm dataTableExport table-bordered table-striped" style="width:100%">
       <thead>
@@ -182,15 +183,15 @@
                             </div> -->
                             <div class="form-group">
                                 <label>Simpanan Pokok</label>
-                                <input type="text" require name="tsi_simpanan_pokok" readonly autocomplete="off" id="tsi_simpanan_pokok" value='0'class="form-control angka">
+                                <input type="text"  name="tsi_simpanan_pokok" readonly autocomplete="off" id="tsi_simpanan_pokok" class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Wajib</label>
-                                <input type="text" require name="tsi_simpanan_wajib" readonly autocomplete="off" id="tsi_simpanan_wajib" value='0'class="form-control angka">
+                                <input type="text"  name="tsi_simpanan_wajib" readonly autocomplete="off" id="tsi_simpanan_wajib" class="form-control angka">
                             </div>
                             <div class="form-group">
                                 <label>Simpanan Sukarela</label>
-                                <input type="text" require name="tsi_simpanan_sukarela" autocomplete="off" id="tsi_simpanan_sukarela" value='0'class="form-control angka">
+                                <input type="text" require name="tsi_simpanan_sukarela" autocomplete="off"  id="tsi_simpanan_sukarela" value='0'class="form-control angka">
                             </div>
                         </div>
                     </div>

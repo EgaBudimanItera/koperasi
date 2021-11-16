@@ -174,21 +174,22 @@
                             <th>No</th>
                             <th>Tanggal</th>
                             <th>Nomor Transaksi</th>
-                            <th>Simpanan Pokok (Rp)</th>
-                            <th>Simpanan Wajib (Rp)</th>
-                            <th>Simpanan Sukarela (Rp)</th>
+                            <th>Jenis Simpanan</th>
+                            <th>Nominal (Rp)</th>
+                            
                             
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($list_simpanan as $key => $val) { ?>
+                        
+                    <?php  foreach($list_simpanan as $key => $val) { ?>
                         <tr>
                             <td><?=$key+1?></td>
                             <td><?=date('d-m-Y',strtotime(date($val->tsi_tanggal_simpan)))?></td>
                             <td><?=$val->tsi_no_simpan?></td>
-                            <td class="text-right"><?=number_format($val->tsi_simpanan_pokok)?></td>
-                            <td class="text-right"><?=number_format($val->tsi_simpanan_wajib)?></td>
-                            <td class="text-right"><?=number_format($val->tsi_simpanan_sukarela)?></td>
+                            <td class="text-center"><?=$val->ssi_nama?></td>
+                            <td class="text-right"><?=number_format($val->tsi_nominal)?></td>
+                            
                             
                         </tr>
                     <?php }?>

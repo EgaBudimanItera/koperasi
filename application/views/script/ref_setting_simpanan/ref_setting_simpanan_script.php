@@ -1,39 +1,24 @@
 <script type="text/javascript">
-	$(document).on('click', '#tambah_mod_anggota', function(e){
+	$(document).on('click', '#tambah_mod_ref_setting_simpanan', function(e){
         e.preventDefault();
-        var spw=<?php Print($simpanan_wajib->ssi_nominal)?>;
-        var spp=<?php Print($simpanan_pokok->ssi_nominal)?>;
-        // console.log(spw);
-        $('#tambah_anggota').modal();
+        $('#tambah_ref_setting_simpanan').modal();
         $('#action').val('tambah');
-        $('#tsi_simpanan_wajib').val(spw);
-        $('#tsi_simpanan_pokok').val(spp);
-        // $.ajax({
-        //     url : '<?=base_url()?>admin/ref_setting_simpanan/get_simpanan',
-        //     type : 'POST',
-        //     data: 'kode='+spw,
-        //     dataType: 'JSON',
-        //     success: function(msg){
-        //         $('#agm_nama').val(msg.agm_nama);
-                
-        //     }
-        // });
+        
        
     });
-
     $('.angka').number( true, 0 );
-    $('#tambah_anggota').on('hidden.bs.modal', function () {
-        $('#tambah_anggota form')[0].reset();
+    $('#tambah_ref_setting_simpanan').on('hidden.bs.modal', function () {
+        $('#tambah_ref_setting_simpanan form')[0].reset();
     });
-    $(document).on('submit', '#form_anggota', function(e){
+    $(document).on('submit', '#form_ref_setting_simpanan', function(e){
         e.preventDefault();
         $('#notif_sukses').html('Loading...');
-        var data = new FormData(document.getElementById('form_anggota'));
+        var data = new FormData(document.getElementById('form_ref_setting_simpanan'));
         var action = $('#action').val();
 
         if(action == 'tambah'){
             $.ajax({
-                url : '<?=base_url()?>admin/anggota/save',
+                url : '<?=base_url()?>admin/ref_setting_simpanan/save',
                 type : 'POST',
                 data : data,
                 processData: false, 
@@ -42,9 +27,9 @@
                     $('#notif_sukses').html(msg);
                 }
             });
-        }else if(action =='ubah'){
+        }else if(action == 'edit'){
             $.ajax({
-                url : '<?=base_url()?>admin/anggota/update',
+                url : '<?=base_url()?>admin/ref_setting_simpanan/update',
                 type : 'POST',
                 data : data,
                 processData: false, 
@@ -57,26 +42,27 @@
 
     });
 
-    $(document).on('click', '.ubah_anggota', function(e){
+    $(document).on('click', '.ubah_ref_setting_simpanan', function(e){
         e.preventDefault();
         var id = $(this).attr('id');
-        $('#tambah_anggota').modal();
-        $('#id_anggota').val(id);
+        $('#tambah_ref_setting_simpanan').modal();
+        $('#id_ref_setting_simpanan').val(id);
         $('#action').val('edit');
         $.ajax({
-            url: '<?=base_url()?>admin/anggota/get_anggota_param',
+            url: '<?=base_url()?>admin/ref_setting_simpanan/get_ref_setting_simpanan_param',
             type: 'POST',
             data: 'id='+id,
             dataType: 'JSON',
             success: function(msg){
-                $('#agm_nama').val(msg.agm_nama);
-                $('#agm_id').val(msg.agm_id);
+                $('#ssi_nama').val(msg.ssi_nama);
+                $('#ssi_id').val(msg.ssi_id);
+                $('#ssi_nominal').val(msg.ssi_nominal);
                 
             }
         });
     });
 
-    $(document).on('click', '.hapus_anggota', function(msg){
+    $(document).on('click', '.hapus_ref_setting_simpanan', function(msg){
         $('#modalHapus').modal();
         var id = $(this).attr('id');
         $('#id_hapus').val(id);
@@ -86,7 +72,7 @@
     $(document).on('click', '.btn_hapus_tahun', function(e){
         var id = $('#id_hapus').val();
         $.ajax({
-            url: '<?=base_url()?>admin/anggota/delete',
+            url: '<?=base_url()?>admin/ref_ref_setting_simpanan/delete',
             type: 'POST',
             data: 'id='+id,
             success: function(msg){

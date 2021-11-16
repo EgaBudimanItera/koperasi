@@ -17,7 +17,9 @@ class M_simpan extends CI_Model {
     }
 
     public function get_data_parameter($id){
-        $hasil=$this->db->from('simpan')->where(array('md5(tsi_ang_id)'=>$id))->get()->result();
+        $hasil=$this->db->from('simpan')
+                        ->join('ref_setting_simpanan','tsi_ssi_id=ssi_id')
+                        ->where(array('md5(tsi_ang_id)'=>$id))->get()->result();
         return $hasil;
     }
 
@@ -28,6 +30,10 @@ class M_simpan extends CI_Model {
 
     public function save_data($data){
         return $this->db->insert('simpan', $data);
+    }
+
+    public function save_data_batch($data){
+        return $this->db->insert_batch('simpan', $data);
     }
 
     public function edit_data($data,$param){

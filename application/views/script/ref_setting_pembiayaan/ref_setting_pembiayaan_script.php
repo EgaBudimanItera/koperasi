@@ -5,6 +5,7 @@
         $('#action').val('tambah');
         
     });
+    $('.angka').number( true, 0 );
     $('#tambah_setting_pembiayaan').on('hidden.bs.modal', function () {
         $('#tambah_setting_pembiayaan form')[0].reset();
     });

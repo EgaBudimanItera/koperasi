@@ -60,11 +60,11 @@
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Max Plafon (Rupiah)</label>
-                <input type="text" class="form-control" autocomplete="off" id="sbi_max_plafon" require name="sbi_max_plafon">
+                <input type="text" class="form-control angka" autocomplete="off" id="sbi_max_plafon" require name="sbi_max_plafon">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Max Waktu Pinjam (Bulan) </label>
-                <input type="text" class="form-control" id="sbi_max_waktu_pinjam" require name="sbi_max_waktu_pinjam">
+                <input type="text" class="form-control angka" id="sbi_max_waktu_pinjam" require name="sbi_max_waktu_pinjam">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Bunga (%) </label>

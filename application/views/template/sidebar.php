@@ -97,6 +97,13 @@
                     <li class="<?=$link=='ref_setting_pembiayaan'?'active':''?>"><a class="nav-link" href="<?=base_url()?>admin/ref_setting_pembiayaan">
                     <i class="fas fa-money-bill"></i> Ref Pembiayaan</a></li>
                     <?php }?>
+
+                    <?php
+                      if($this->session->userdata('usr_setting_simpanan')==1){
+                    ?>
+                    <li class="<?=$link=='ref_setting_simpanan'?'active':''?>"><a class="nav-link" href="<?=base_url()?>admin/ref_setting_simpanan">
+                    <i class="fas fa-money-bill"></i> Ref Simpanan</a></li>
+                    <?php }?>
                     <?php
                       if($this->session->userdata('usr_ref_dok_identitas')==1){
                     ?>

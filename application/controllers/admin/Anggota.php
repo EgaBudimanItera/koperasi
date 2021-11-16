@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Anggota extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('M_anggota','M_rekening','M_pendaftaran','M_ref_agama','M_ref_pekerjaan','M_ref_dok_identitas','M_simpan','M_pembiayaan','M_bayar_pembiayaan'));
+		$this->load->model(array('M_anggota','M_rekening','M_pendaftaran','M_ref_agama','M_ref_pekerjaan','M_ref_setting_simpanan','M_ref_dok_identitas','M_simpan','M_pembiayaan','M_bayar_pembiayaan'));
         
 		if($this->session->userdata('usr_anggota')==0){
             echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
@@ -24,11 +24,15 @@ class Anggota extends CI_Controller {
             'ref_agama'=>$this->M_ref_agama->get_all_data(),
             'ref_pekerjaan'=>$this->M_ref_pekerjaan->get_all_data(),
             'ref_dok_identitas'=>$this->M_ref_dok_identitas->get_all_data(),
+			'simpanan_wajib'=>$this->M_ref_setting_simpanan->get_simpanan('SPW'),
+			'simpanan_pokok'=>$this->M_ref_setting_simpanan->get_simpanan('SPP'),
 		);
 	
 		$this->load->view('template/wrapper',$data);
 
 	}
+
+	
 	public function detail($id){
 		$output=array();
 		$pembiayaan=$this->M_pembiayaan->get_data_parameter($id);
@@ -66,7 +70,7 @@ class Anggota extends CI_Controller {
 		echo json_encode($data);
 	}
 	function save(){
-        
+        $nama_pembuat=$this->session->userdata('usr_nama');
 		$dft_id=$this->M_pendaftaran->save_data();
 		// $dft_id='1';
 		$tsi_simpanan_pokok=str_replace(',', '', $this->input->post('tsi_simpanan_pokok',true));
@@ -104,7 +108,7 @@ class Anggota extends CI_Controller {
             'ang_alamat_ahli_waris'=>$this->input->post('ang_alamat_ahli_waris',true),
             'ang_hub_keluarga'=>$this->input->post('ang_hub_keluarga',true),
             'ang_dft_id'=>$dft_id,
-            'ang_created_by'=>"admin",
+            'ang_created_by'=>$nama_pembuat,
 			'ang_created_at'=>date('Y-m-d H:i:s'),
         );
 		
@@ -112,23 +116,53 @@ class Anggota extends CI_Controller {
 		$data1=array(
             'rek_ang_id'=>$ang_id,
             'rek_no_rekening'=>$this->input->post('rek_no_rekening',true),
-            'rek_created_by'=>"admin",
+            'rek_created_by'=>$nama_pembuat,
 			'rek_created_at'=>date('Y-m-d H:i:s'),
         );
         $rek_id=$this->M_rekening->save_data($data1);
-
-		$data2=array(
-			'tsi_ang_id'=>$ang_id,
-			'tsi_no_simpan'=>$this->M_simpan->nomor_simpan().date('Y'),
-			'tsi_rek_id'=>$rek_id,
-			'tsi_simpanan_pokok'=>$tsi_simpanan_pokok,
-			'tsi_simpanan_wajib'=>$tsi_simpanan_wajib,
-			'tsi_simpanan_sukarela'=>$tsi_simpanan_sukarela,
-			'tsi_created_by'=>'admin',
-			'tsi_created_at'=>date('Y-m-d H:i:s'),
+		//simpanan Pokok
+		$id_simpanan_pokok=$this->M_ref_setting_simpanan->get_simpanan('SPP')->ssi_id;
+		$id_simpanan_wajib=$this->M_ref_setting_simpanan->get_simpanan('SPW')->ssi_id;
+		$id_simpanan_sukarela=$this->M_ref_setting_simpanan->get_simpanan('SPS')->ssi_id;
+		$no_transaksi=$this->M_simpan->nomor_simpan().date('dmY');
+		$tgl_created=date('Y-m-d H:i:s');
+		$tsi_tanggal_simpan=date("Y-m-d", strtotime($this->input->post('tsi_tanggal_simpan',true)));
+		$data3=array(
+			array(
+				'tsi_ang_id'=>$ang_id,
+				'tsi_no_simpan'=>$no_transaksi,
+				'tsi_rek_id'=>$rek_id,
+				'tsi_tanggal_simpan'=>$tsi_tanggal_simpan,
+				'tsi_ssi_id'=>$id_simpanan_pokok,
+				'tsi_nominal'=>$tsi_simpanan_pokok,
+				'tsi_created_by'=>$nama_pembuat,
+				'tsi_created_at'=>$tgl_created
+			),
+			array(
+				'tsi_ang_id'=>$ang_id,
+				'tsi_no_simpan'=>$no_transaksi,
+				'tsi_rek_id'=>$rek_id,
+				'tsi_tanggal_simpan'=>$tsi_tanggal_simpan,
+				'tsi_ssi_id'=>$id_simpanan_wajib,
+				'tsi_nominal'=>$tsi_simpanan_wajib,
+				'tsi_created_by'=>$nama_pembuat,
+				'tsi_created_at'=>$tgl_created,
+			),
+			array(
+				'tsi_ang_id'=>$ang_id,
+				'tsi_no_simpan'=>$no_transaksi,
+				'tsi_rek_id'=>$rek_id,
+				'tsi_tanggal_simpan'=>$tsi_tanggal_simpan,
+				'tsi_ssi_id'=>$id_simpanan_sukarela,
+				'tsi_nominal'=>$tsi_simpanan_sukarela,
+				'tsi_created_by'=>$nama_pembuat,
+				'tsi_created_at'=>$tgl_created,
+			),
 		);
 
-		$simpan=$this->M_simpan->save_data($data2);
+		
+
+		$simpan=$this->M_simpan->save_data_batch($data3);
         if($simpan){
 			echo '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil Disimpan !</div>';
             echo'<script>location.reload();</script>';
