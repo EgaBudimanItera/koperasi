@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Simpan extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('M_simpan','M_anggota'));
+		$this->load->model(array('M_simpan','M_anggota','M_ref_setting_simpanan'));
         
 		if($this->session->userdata('usr_simpan')==0){
             echo '<script>alert("Maaf, anda tidak boleh mengakses halaman ini")</script>';
@@ -21,6 +21,7 @@ class Simpan extends CI_Controller {
 			'list'=>$this->M_simpan->get_all_data(),
             'nomor_simpan'=>$this->M_simpan->nomor_simpan(),
             'anggota'=>$this->M_anggota->get_all_data(),
+			'simpanan_wajib'=>$this->M_ref_setting_simpanan->get_simpanan('SPW'),
 		);
 	
 		$this->load->view('template/wrapper',$data);
@@ -37,6 +38,7 @@ class Simpan extends CI_Controller {
 	}
 	function save(){
         $data=$this->M_simpan->save_data();
+		
         if($data){
 			echo '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil Disimpan !</div>';
             echo'<script>location.reload();</script>';

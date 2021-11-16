@@ -1,8 +1,6 @@
 <script type="text/javascript">
 	$('.select2modalsimpan').select2({
-        width: '100%',
-        
-                   
+        width: '100%',         
     });
     $('.angka').number( true, 0 );
     $('#tambah_simpan').on('hidden.bs.modal', function () {
@@ -11,28 +9,35 @@
 
     $('#tsi_ang_id').change(function(){
         var id=$(this).val();
-        $.ajax({
-            url : '<?=base_url()?>admin/anggota/get_anggota_param_comp',
-            type: 'POST',
-            data: 'id='+id,
-            dataType: 'JSON',
-            success : function(msg){
-                $('#rek_no_rekening').val(msg.rek_no_rekening);
-                $('#ang_tempat_lahir').val(msg.ang_tempat_lahir);
-                $('#ang_tanggal_lahir').val(msg.ang_tanggal_lahir);
-                $('#ang_jk').val(msg.ang_jk);
-                $('#ang_no_hp').val(msg.ang_no_hp);
-                $('#idn_nama').val(msg.idn_nama);
-                $('#ang_no_identitas').val(msg.ang_no_identitas);
-                $('#ang_tanggal_lahir').val(msg.ang_tanggal_lahir);
-            }
-        });
+        console.log(id);
+        if(id !== ""){
+            $.ajax({
+                url : '<?=base_url()?>admin/anggota/get_anggota_param_comp',
+                type: 'POST',
+                data: 'id='+id,
+                dataType: 'JSON',
+                success : function(msg){
+                    $('#rek_no_rekening').val(msg.rek_no_rekening);
+                    $('#ang_tempat_lahir').val(msg.ang_tempat_lahir);
+                    $('#ang_tanggal_lahir').val(msg.ang_tanggal_lahir);
+                    $('#ang_jk').val(msg.ang_jk);
+                    $('#ang_no_hp').val(msg.ang_no_hp);
+                    $('#idn_nama').val(msg.idn_nama);
+                    $('#ang_no_identitas').val(msg.ang_no_identitas);
+                    $('#ang_tanggal_lahir').val(msg.ang_tanggal_lahir);
+                }
+            });
+        }
+        
     })
     $(document).on('click', '#tambah_mod_simpan', function(e){
         e.preventDefault();
         $('#tambah_simpan').modal();
         $('#action').val('tambah');
-        
+        var spw=<?php Print($simpanan_wajib->ssi_nominal)?>;
+        $('#tsi_simpanan_wajib').val(spw);
+        // $("#tsi_ang_id").select2('val', null);
+        $('#tsi_ang_id').val('').trigger('change');
        
     });
     $('#tambah_simpan').on('hidden.bs.modal', function () {
@@ -46,7 +51,7 @@
 
         if(action == 'tambah'){
             $.ajax({
-                url : '<?=base_url()?>admin/ref_simpan/save',
+                url : '<?=base_url()?>admin/simpan/save',
                 type : 'POST',
                 data : data,
                 processData: false, 
@@ -57,7 +62,7 @@
             });
         }else if(action == 'edit'){
             $.ajax({
-                url : '<?=base_url()?>admin/ref_simpan/update',
+                url : '<?=base_url()?>admin/simpan/update',
                 type : 'POST',
                 data : data,
                 processData: false, 
@@ -99,7 +104,7 @@
     $(document).on('click', '.btn_hapus_tahun', function(e){
         var id = $('#id_hapus').val();
         $.ajax({
-            url: '<?=base_url()?>admin/ref_simpan/delete',
+            url: '<?=base_url()?>admin/simpan/delete',
             type: 'POST',
             data: 'id='+id,
             success: function(msg){

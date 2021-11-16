@@ -12,9 +12,9 @@
               <th>Nama Anggota</th>
               <th>Nomor Transaksi</th>
               <th>Tanggal</th>
-              <th>Simpanan Pokok (Rp)</th>
-              <th>Simpanan Wajib (Rp)</th>
-              <th>Simpanan Sukarela (Rp)</th>
+              <th>Jenis Simpanan</th>
+              <th>Nominal (Rp)</th>
+              
               <th>Aksi</th>
           </tr>
       </thead>
@@ -25,11 +25,11 @@
               <td><?=$val->ang_nama?></td>
               <td class='text-center'><?=$val->tsi_no_simpan?></td>
               <td><?=date('d-m-Y',strtotime(date($val->tsi_tanggal_simpan)))?></td>
-              <td class='text-right'><?=number_format($val->tsi_simpanan_pokok)?></td>
-              <td class='text-right'><?=number_format($val->tsi_simpanan_wajib)?></td>
-              <td class='text-right'><?=number_format($val->tsi_simpanan_sukarela)?></td>
+              <td><?=$val->ssi_nama?></td>
+              <td class='text-right'><?=number_format($val->tsi_nominal)?></td>
+              
               <td>
-                <a id="<?=$val->tsi_id?>"  href="#" class="btn btn-sm btn-warning ubah_simpan"> <i class="fas fa-pencil-alt"></i> Ubah </a>
+                <!-- <a id="<?=$val->tsi_id?>"  href="#" class="btn btn-sm btn-warning ubah_simpan"> <i class="fas fa-pencil-alt"></i> Ubah </a> -->
                 <a id="<?=$val->tsi_id?>" class="btn btn-sm btn-danger text-white hapus_simpan"> <i class="fas fa-trash"></i> Hapus </a> 
 
               </td>
@@ -112,10 +112,10 @@
                       <label>Nomor Identitas</label>
                       <input type="text" id="ang_no_identitas" autocomplete="off" require name="ang_no_identitas" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Simpanan Pokok</label>
                         <input type="text" require name="tsi_simpanan_pokok" autocomplete="off" id="tsi_simpanan_pokok" value='0'class="form-control angka">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Simpanan Wajib</label>
                         <input type="text" require name="tsi_simpanan_wajib" autocomplete="off" id="tsi_simpanan_wajib" value='0'class="form-control angka">
@@ -131,7 +131,7 @@
             </div>
             
             <input type="submit" class="btn btn-primary" value="Simpan">
-            <input type="text" style="display: none" name="agm_id" id="agm_id"/>
+            <input type="text" style="display: none" name="tsi_id" id="tsi_id"/>
             <input type="text" style="display: none" name="action" id="action"/>
         </form>
       </div>
