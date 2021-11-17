@@ -33,6 +33,10 @@ class Ref_setting_pembiayaan extends CI_Controller {
 		$data=$this->M_ref_setting_pembiayaan->get_a_data();
 		echo json_encode($data);
 	}
+	public function get_ref_setting_pembiayaan_param_comp(){
+		$data=$this->M_ref_setting_pembiayaan->get_a_data_comp();
+		echo json_encode($data);
+	}
 	function save(){
         $data=$this->M_ref_setting_pembiayaan->save_data();
         if($data){

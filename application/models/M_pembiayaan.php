@@ -9,7 +9,10 @@ class M_pembiayaan extends CI_Model {
 	}
 
     public function get_all_data(){
-        $hasil=$this->db->from('pembiayaan')->where(array('tbi_is_deleted'=>'1'))->get()->result();
+        $hasil=$this->db->from('pembiayaan')
+                        ->join('ref_setting_pembiayaan','sbi_id=tbi_sbi_id')
+                        ->join('anggota','tbi_ang_id=ang_id')
+                        ->where(array('tbi_is_deleted'=>'1'))->get()->result();
         return $hasil;
     }
 

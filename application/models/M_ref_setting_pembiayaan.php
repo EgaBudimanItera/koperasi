@@ -47,5 +47,10 @@ class M_ref_setting_pembiayaan extends CI_Model {
         return $this->db->delete('ref_setting_pembiayaan', array('sbi_id'=>$sbi_id));
     }
 
-    
+    public function get_a_data_comp(){
+        $id = $this->input->post('id',true);
+        $hasil=$this->db->from('ref_setting_pembiayaan')
+                        ->where(array('sbi_id'=>$id))->get()->row();
+        return $hasil;
+    }
 }
