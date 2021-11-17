@@ -30,5 +30,22 @@ class M_bayar_pembiayaan extends CI_Model {
         return $this->db->delete('bayar_pembiayaan', $param);
     }
 
+    public function nomor_pembayaran(){
+        //DFT
+        $this->db->select('RIGHT(byr_no_pembayaran,5) as kode', FALSE);
+        $this->db->order_by('byr_id','DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('bayar_pembiayaan');
+        if($query->num_rows() <> 0){      
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        }
+        else {       
+            $kode = 1;
+        }
+        $kodemax = str_pad($kode, 5, "0", STR_PAD_LEFT);
+        $kodejadi = 'BYR'.date('Y').$kodemax;
+        return $kodejadi;
+    } 
     
 }

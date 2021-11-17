@@ -30,5 +30,22 @@ class M_pembiayaan extends CI_Model {
         return $this->db->delete('pembiayaan', $param);
     }
 
+    public function nomor_pembiayaan(){
+        //DFT
+        $this->db->select('RIGHT(tbi_no_pembiayaan,5) as kode', FALSE);
+        $this->db->order_by('tbi_id','DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('pembiayaan');
+        if($query->num_rows() <> 0){      
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        }
+        else {       
+            $kode = 1;
+        }
+        $kodemax = str_pad($kode, 5, "0", STR_PAD_LEFT);
+        $kodejadi = 'PINJ'.date('Y').$kodemax;
+        return $kodejadi;
+    } 
     
 }

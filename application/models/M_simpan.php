@@ -30,8 +30,21 @@ class M_simpan extends CI_Model {
     }
 
     public function nomor_simpan(){
-        $randnum = rand(1111111111,9999999999);
-        return $randnum;
+        //DFT
+        $this->db->select('RIGHT(tsi_no_simpan,5) as kode', FALSE);
+        $this->db->order_by('tsi_id','DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('simpan');
+        if($query->num_rows() <> 0){      
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        }
+        else {       
+            $kode = 1;
+        }
+        $kodemax = str_pad($kode, 5, "0", STR_PAD_LEFT);
+        $kodejadi = 'SIMP'.date('Y').$kodemax;
+        return $kodejadi;
     } 
 
     public function save_data(){
