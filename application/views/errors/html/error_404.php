@@ -5,145 +5,60 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="utf-8">
 <title>404 Page Not Found</title>
-<!-- Google font -->
-<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 <style type="text/css">
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
 
 body {
-  padding: 0;
-  margin: 0;
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
 }
 
-#notfound {
-  position: relative;
-  height: 100vh;
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
 }
 
-#notfound .notfound {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
 }
 
-.notfound {
-  max-width: 710px;
-  width: 100%;
-  text-align: center;
-  padding: 0px 15px;
-  line-height: 1.4;
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
 }
 
-.notfound .notfound-404 {
-  height: 200px;
-  line-height: 200px;
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
 }
 
-.notfound .notfound-404 h1 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 168px;
-  margin: 0px;
-  color: #ff508e;
-  text-transform: uppercase;
-}
-
-.notfound h2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #222;
-  margin: 0;
-}
-
-.notfound-search {
-  position: relative;
-  padding-right: 123px;
-  max-width: 420px;
-  width: 100%;
-  margin: 30px auto 22px;
-}
-
-.notfound-search input {
-  font-family: 'Raleway', sans-serif;
-  width: 100%;
-  height: 40px;
-  padding: 3px 15px;
-  color: #222;
-  font-size: 18px;
-  background: #f8fafb;
-  border: 1px solid rgba(34, 34, 34, 0.2);
-  border-radius: 3px;
-}
-
-.notfound-search button {
-  font-family: 'Raleway', sans-serif;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 120px;
-  height: 40px;
-  text-align: center;
-  border: none;
-  background: #ff508e;
-  cursor: pointer;
-  padding: 0;
-  color: #fff;
-  font-weight: 700;
-  font-size: 18px;
-  border-radius: 3px;
-}
-
-.notfound a {
-  font-family: 'Raleway', sans-serif;
-  display: inline-block;
-  font-weight: 700;
-  border-radius: 15px;
-  text-decoration: none;
-  color: #39b1cb;
-}
-
-.notfound a>.arrow {
-  position: relative;
-  top: -2px;
-  border: solid #39b1cb;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  -webkit-transform: rotate(135deg);
-      -ms-transform: rotate(135deg);
-          transform: rotate(135deg);
-}
-
-@media only screen and (max-width: 767px) {
-  .notfound .notfound-404 {
-    height: 122px;
-    line-height: 122px;
-  }
-  .notfound .notfound-404 h1 {
-    font-size: 122px;
-  }
+p {
+	margin: 12px 15px 12px 15px;
 }
 </style>
 </head>
 <body>
-	<div id="notfound">
-		<div class="notfound">
-			<div class="notfound-404">
-				<h1>404</h1>
-			</div>
-			<h2>Oops, <?php echo $message; ?></h2>
-			
-			<a href="<?=base_url()?>"><span class="arrow"></span>Return To Homepage</a>
-		</div>
+	<div id="container">
+		<h1><?php echo $heading; ?></h1>
+		<?php echo $message; ?>
 	</div>
 </body>
 </html>
